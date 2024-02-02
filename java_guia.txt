@@ -1,0 +1,325 @@
+Em java, o código fonte passa pelo compilador -> é gerado um bytecode -> interpretado pela JVM -> executa
+
+Bytecode é um conjunto de instruções de baixo nível projetado para ser executado por uma máquina virtual.
+
+WORE: write once, run everywhere.
+
+JRE: Ambiente de Execussão Java (Java Runtime Environment)
+	JVM: Máquina Virtual Java ()
+		Loader: parte interna da JVM que carrega o bytecode na memória da maquina virtual.
+		Verificador: verifica se o código pode ser executado sem problema. 
+
+		Interpretador: código em bytecode e transforma no código nativo da máquina.
+		Gerenciador de memória: trata como o código e as variáveis são organizados na memória da JVM.
+
+		Compilador JIT: Just in Time -> considera importante partes do código.
+
+	Bibliotecas: APIs
+
+
+JDK: Kit de Desenvolvimento Java (Java Development Kit)
+	JRE.
+	Javalang.
+	JavaTools:
+		JavaC: java compiler.
+		Debugger: verifica como o programa estã sendo executado em tempo real.
+	APIs.
+
+Versões: SE, EE, ME.
+
+
+
+
+
+ORIENTAÇÃO A OBJETOS ---------------------------------------------------------------
+
+CLASSES: descrição de um grupo de objetos.
+	Ex.: Classe é a base; a planta da casa;
+
+OBJETO: instância de uma classe.
+	Ex.: É a casa construída com base na planta. Podendo ter várias casas dessa mesma planta.
+
+ATRIBUTOS: 
+
+VALORES:
+
+MÉTODO: comportamento da classe (funções); ações.
+
+HERANÇA: 
+
+POLIMORFISMO: habilidade de terem "mais de um tipo".
+
+Diferença entre Estruturado e POO: 
+
+PACOTES: uma forma de organizar classes.
+
+
+
+
+Classe/Interface: primeira letra de cada palavra sempre em maiusculo e o resto minusculo.
+	EX.: public class PrimeiroProjeto{}
+
+Atributo/Variável/Método: primeira palavra toda minusculo, segunda palavra: primeira letra em maiusculo e o resto minusculo.
+	Ex.: notaPrimeiroAluno;
+	     public static void meuMetodo(){}
+
+Pacote: tudo minusculo.
+	Ex.: notasaluno;
+
+Constantes: tudo maiusculo.
+	Ex.: VALOR_DE_PI;
+
+
+
+
+FUNÇÃO PRINCIPAL ----------------------------------------
+
+class HelloWorld {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+
+}
+
+class: declaração da classe.
+
+HelloWorld: nome da classe.
+
+public static void main(String[] args): Método.
+
+public static: Modificadores de Acesso do Método.
+
+void: tipo de retorno do método.
+
+main: nome do método.
+
+String[] args: Parâmetros/Argumentos.
+
+System.out.println("Hello World!");: Código.
+
+
+
+
+
+PACOTES / BIBLIOTECAS: ---------------------------------------------------------------
+
+	Adicionar pacotes com funcionalidades extras no código.
+
+	JAVA já vem com um pacote padrão e básico com instruções essenciais para o funcionamento da linguagem.
+		Pacote: java.lang
+		
+	INSTRUÇÃO: import
+		Ex.: import arcondicionado;
+	
+	BIBLIOTECAS:
+
+		swing: cria interface gráfica para janelas/ambientes com janelas.
+			import javax.swing;
+
+
+
+
+
+FORMATAÇÃO DE SAÍDA DE DADOS:---------------------------------------------------------------
+
+
+
+COMANDOS:
+System.out.print();
+
+	System: classe que fornece acesso a recursos do sistema, como entrada e saída padrão.
+
+	out: representa a saída padrão de dados. É uma instância estática da classe PrintStream na classe System; 
+
+	System.out: é um objeto que lida com a saída de dados.
+
+	print(): um método da classe PrintStream que imprime uma linha de texto.
+
+	println(): um método da classe PrintStream que imprime uma linha de texto e prepara uma quebra de linha.
+
+
+
+FORMATAÇÃO DE ENTRADA DE DADOS:---------------------------------------------------------------
+
+Necessário importar o pacote com a classe no código usando:
+	import java.util.Scanner;
+
+
+CLASSE: Scanner - permite a entrada de dados do usuário por meio padrão.
+	
+	Ex.:
+	     Scanner scan = new Scanner(System.in);
+
+		Scanner: classe em java que faz parte do pacote 'java.util'.
+			Fornece métodos para analisar diferentes tipos de dados a partir de várias fontes.
+		
+		scan: nome do objeto da classe 'Scanner'.
+
+		new: aloca espaço na memória para o novo objeto e invoca o construtor da classe para inicializar esse objeto.
+
+		Scanner(): construtor que aceita parâmetro para especificar a fonte de entrada de dados.
+	
+		OBS: construtor de classe usado para inicializar os atributos para o objeto.
+		
+		System.in: parâmetro que indica entrada de dados de forma padrão.
+
+			System: Classe que fornece acesso a recursos do sistema, como entrada e saída padrão de dados.
+
+
+LENDO LINHA INTEIRA:
+	String nome = scan.nextLine();
+
+		String nome: variável 'nome' do tipo 'String'.
+	
+		scan: objeto da classe 'Scanner' previamente criado e configurado para ler dados de entrada padrão.
+
+		scan.nextLine(): método, da classe Scanner, para ler linha de texto da entrada padrão. 
+		
+
+LENDO TIPO ESPECIFICO: métodos para tipos primitivos.
+	String primeiroNome = scan.next();
+	
+	int idade = scan.nextInt();
+
+	double altura = scan.nextDouble();
+
+		
+VARIÁVEIS:--------------------------------------------------------------- 
+
+
+
+- Área da memória, associada a um nome, que pode armazenar dados de um determinado tipo.
+
+Declaração: <tipo> <nome da variável>;
+	Com atribuição: <tipo> <nome da variável> = <dado>;
+
+OBS: primeira palavra: toda minuscula.
+     segunda palavra: primeira letra em maiusculo e o resto minusculo.
+	Ex.: int notaPrimeiroAluno;
+
+
+
+TIPOS PRIMITIVOS DE DADOS::---------------------------------------------------------------
+
+INTEIROS:
+	- byte (8 bits)
+	- short (16 bits)
+	- int (32 bits)
+	- long (64 bits)
+		Ex.: long saldo1 = 100l;
+		//obrigatório o 'l' no final
+	- char
+
+PONTO FLUTUANTE: 
+	- float (32 bits)
+		Ex.: float saldo1 = 100.30f;
+		//obrigatório o 'f' no final
+
+	- double (64 bits)
+
+
+	OBS: aceitam notação cientifica.
+		Ex.: double d1 = 123.4;
+		     double d2 = 1.234e2; //mesmo que d1 só que com notação
+
+
+BOOLEAN:
+	- true
+		Ex.: boolean verdadeiro = true;
+	- false
+		Ex.: boolean falso = false;
+
+LITERAIS: hexadecimal, binario, octal. (não testado por mim)
+
+	int decVal = 26;
+	int hexVal = 0xla;
+	int octVal = 032;
+	int binVal = 0b11010;
+
+
+
+SEQUÊNCIAS DE ESCAPE::---------------------------------------------------------------
+
+	\t (tab)
+	\b (backspace)
+	\n (nova linha)
+	\r (retorno de carro): cursor é movido para o inicio da linha.
+	\f (avanço de página)
+	\' (aspas simples)
+	\" (aspas duplas)
+	\\ (barra invertida)
+	\ddd (constante octal)
+	\uxxxx (constante hexadecimal)
+
+OPERADORES::---------------------------------------------------------------
+
+	+ (adição)
+	- (subtração)
+	* (multiplicação)
+	/ (divisão)
+	% (resto de divisão)
+	++ (incremento)
+	-- (decremento)
+	
+	= (inserção de dados)
+	== (igualdade)
+	!= (diferença)
+	> e < (maior/menor que)
+	>= e <= (maior/menor ou igual que)
+
+	! (negação)
+	&& (AND)
+	|| (OR)
+	^ (XOR)
+
+	+=
+	-=
+	/=
+	*= 
+	%=
+
+ESTRUTURAS CONDICIONAIS::---------------------------------------------------------------
+
+	if()
+	{
+	}
+
+	ou
+
+	if()
+	{
+	}else{
+	}
+
+	ou
+
+	if()
+	{
+	}else if(){
+	}
+
+	ou 
+
+	switch(){
+
+	case <dado>:
+	break;
+
+	default:
+
+	}
+
+ESTRUTURAS DE REPETIÇÃO::---------------------------------------------------------------
+
+	while(){}
+
+	do{}while();
+
+	for(){}
+		Ex.:
+			for(int i = 1; i < 10; i++){}
+		
+		Com mais de uma variável:
+		Ex.:
+			for(int i = 0, j = 10; i < j; i++, j--){}
